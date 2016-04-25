@@ -1,19 +1,10 @@
 const React = require('react')
-const { object, arrayOf } = React.PropTypes
+const { string, object, arrayOf } = React.PropTypes
 const ShowCard = require('./ShowCard.jsx')
 const Header = require('./Header.jsx')
-const { connector } =  require('./Store.jsx')
+const { connector } = require('./Store.jsx')
 
 class Search extends React.Component {
-
-//   static propTypes = {
-// //    shows: object,
-//       searchTerm: string
-//   };
-
-  constructor() {
-    super()
-  }
 
   render () {
     return (
@@ -21,7 +12,7 @@ class Search extends React.Component {
         <Header showSearch />
         <div className='shows'>
           {this.props.shows
-            .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0 )
+            .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0)
             .map((show) => (
               <ShowCard key={show.title} {...show} />
           ))}
@@ -32,7 +23,8 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  shows: arrayOf(object)
+  shows: arrayOf(object),
+  searchTerm: string
 }
 
 module.exports = connector(Search)

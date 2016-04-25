@@ -6,7 +6,7 @@ const {connector} = require('./Store.jsx')
 
 class Details extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super()
 
     this.state = {
@@ -14,18 +14,19 @@ class Details extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     axios.get(`http://www.omdbapi.com/?i=${this.assignShow(this.props.params.id).imdbID}`)
     .then((response) => {
       this.setState({omdbData: response.data})
     })
     .catch((error) => {
-      console.error('axios api error')
+      var err = error
+      console.error(err)
     })
   }
 
-  assignShow(id) { // these args both come from react-router. replace is a function
-    const showArray = this.props.shows.filter((show) => show.imdbID ===id);
+  assignShow (id) { // these args both come from react-router. replace is a function
+    const showArray = this.props.shows.filter((show) => show.imdbID === id)
     return showArray[0]
   }
 
@@ -35,7 +36,7 @@ class Details extends React.Component {
       description,
       year,
       poster,
-      trailer,
+      trailer
     } = this.assignShow(this.props.params.id)
     let rating
     if (this.state.omdbData.imdbRating) {

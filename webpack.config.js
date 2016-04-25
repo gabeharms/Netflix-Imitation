@@ -8,7 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extentions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   stats: {
     colors: true,
@@ -16,12 +16,12 @@ module.exports = {
     chunks: false
   },
   module: {
-    preloaders: [
+    preLoaders: [
       {
         test: /\.jsx?$/,
-        loader: 'eslint-loader',
+        loader: "eslint-loader",
         exclude: /node_modules/
-      },
+      }
     ],
     loaders: [
       {
@@ -29,13 +29,12 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.json?$/,
-        loader: 'json-loader',
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   }
 }
-
 // module.exports = {
 //   context: __dirname,
 //   entry: './js/BrowserEntry.jsx',

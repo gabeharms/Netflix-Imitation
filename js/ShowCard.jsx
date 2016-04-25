@@ -20,7 +20,8 @@ ShowCard.propTypes = {
   title: string.isRequired,
   poster: string.isRequired,
   year: string.isRequired,
-  description: string.isRequired
+  description: string.isRequired,
+  imdbID: string.isRequired
 }
 
 module.exports = ShowCard

@@ -5,12 +5,12 @@ const { connector } = require('./Store.jsx')
 
 class Header extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props)
-    this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this);
+    this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
   }
 
-  handleSearchTermEvent(event) {
+  handleSearchTermEvent (event) {
     this.props.setSearchTerm(event.target.value)
   }
 
@@ -47,9 +47,10 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    handleSearchChange: func,
-    showSearch: bool,
-    searchTerm: string,
+  handleSearchChange: func,
+  showSearch: bool,
+  searchTerm: string,
+  setSearchTerm: func
 }
 
 module.exports = connector(Header)

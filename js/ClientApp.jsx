@@ -8,7 +8,6 @@ const { Router, Route, IndexRoute, browserHistory } = ReactRouter
 const { store } = require('./Store.jsx')
 const { Provider } = require('react-redux')
 
-
 // Thoughts:
 // So we mount this 'MyFirstComponent', but its not a React Class. It
 // doesn't even have a render method. It is a simple method. And this works

@@ -5,11 +5,11 @@ const SET_SEARCH_TERM = 'setSearchTerm'
 
 const initialState = {
   searchTerm: '',
-  shows: shows,
+  shows: shows
 }
 
-const rootReducer = (state=initialState, action) => {
-  switch(action.type) {
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
     case SET_SEARCH_TERM:
       return reduceSearchTerm(state, action)
     default:
@@ -24,7 +24,7 @@ const reduceSearchTerm = (state, action) => {
 }
 
 const store = Redux.createStore(rootReducer, initialState, Redux.compose(
-  typeof window == 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
+  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
 ))
 
 const mapStateToProps = (state) => {
